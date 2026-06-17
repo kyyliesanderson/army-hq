@@ -1,0 +1,176 @@
+/* Match Bootstrap theme fonts */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Nunito:wght@200;300;400;700&display=swap');
+
+body {
+    background-color: #1a0000;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+nav {
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 75%, #000 100%), url('BTS2.0');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 35rem;
+    padding: 15rem 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.hero p {
+    font-family: 'Nunito', sans-serif;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.2rem;
+}
+
+.hero a {
+    background-color: #E8192C;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    border-radius: 5px;
+}
+
+.hero a:hover {
+    background-color: #000;
+}
+
+.section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #2a0000;
+    border-radius: 10px;
+}
+
+.section h2 {
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.section p {
+    color: rgba(255,255,255,0.5);
+    font-family: 'Nunito', sans-serif;
+}
+
+.section ol {
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.section ul {
+    color: rgba(255,255,255,0.5);
+    font-family: 'Nunito', sans-serif;
+}
+
+.section img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #E8192C;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+button:hover {
+    background-color: #800000;
+}
+
+#result h3 {
+    color: #E8192C;
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+}
+
+#result p {
+    color: rgba(255,255,255,0.5);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Nunito', sans-serif;
+    margin-top: 40px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #800000;
+}
+
+body {
+    background-color: #fff !important;
+}
+
+.section {
+    background-color: #000 !important;
+}

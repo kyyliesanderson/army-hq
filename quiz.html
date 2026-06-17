@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which BTS Member Are You?</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <!-- Navigation with anchor links and back to main site -->
+    <nav>
+    <a href="index.html">← Back to ARMY HQ</a> |
+    <a href="#quiz">Take the Quiz</a> |
+    <a href="#about-quiz">About</a> |
+    <a href="#video">Most Popular BTS Video</a> |
+    <a href="#tableau">BTS Stats</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="top" class="hero">
+        <h1>Which BTS Member Are You?</h1>
+        <p>Answer a few questions and find out your BTS soulmate!</p>
+        <a href="#quiz">Take the Quiz</a>
+    </div>
+
+    <!-- About Section with nested list (rubric requirement) -->
+    <div id="about-quiz" class="section">
+        <h2>About This Quiz</h2>
+        <img src="BTSbackground.jpg" alt="BTS Group Photo" width="600">
+        <p>This quiz will match you with your BTS member based on your personality!</p>
+        <ol>
+            <li>THE MEMBERS
+                <ul>
+                    <li>RM — Leader &amp; Rapper</li>
+                    <li>Jin — Vocalist</li>
+                    <li>Suga — Rapper &amp; Producer</li>
+                    <li>J-Hope — Rapper &amp; Dancer</li>
+                    <li>Jimin — Vocalist &amp; Dancer</li>
+                    <li>V — Vocalist</li>
+                    <li>Jungkook — Vocalist &amp; Golden Maknae</li>
+                </ul>
+            </li>
+            <li>What to expect
+                <ul>
+                    <li>5 personality questions</li>
+                    <li>Instant results</li>
+                    <li>Share with your ARMY friends!</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- YouTube Video (rubric requirement) -->
+    <div id="video" class="section">
+        <h2>MOST POPULAR MUSIC VIDEO ON YOUTUBE - DYNAMITE</h2>
+        <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/gdZLi9oWNZg"
+        title="BTS Dynamite"
+        iframe {
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+                }
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+    </div>
+    <!-- Quiz Section -->
+    <div id="quiz" class="section">
+        <h2>Find Your BTS Member!</h2>
+        <div id="quiz-container">
+            <p>Loading quiz...</p>
+        </div>
+        <div id="result" style="display:none;">
+            <h3>You are: <span id="member-result"></span>!</h3>
+            <p id="member-desc"></p>
+            <button onclick="restartQuiz()">Try Again!</button>
+        </div>
+    </div>
+    <!-- Tableau Graph -->
+<div id="tableau" class="section">
+    <h2>BTS By The Numbers</h2>
+    <div class='tableauPlaceholder' id='viz1781730674543' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/BT/BTSc1/Dashboard1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BTSc1/Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/BT/BTSc1/Dashboard1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div><script type='text/javascript'>var divElement = document.getElementById('viz1781730674543');var vizElement = divElement.getElementsByTagName('object')[0];vizElement.style.width='100%';vizElement.style.height='2027px';var scriptElement = document.createElement('script');scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
+</div>
+    <!-- Footer with link back to main site -->
+    <footer>
+        <p>ARMY HQ | <a href="index.html">Back to Main Site</a></p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                question: "What's your vibe?",
+                answers: ["Intellectual & deep", "Funny & charming", "Chill & mysterious", "Energetic & bright", "Sweet & hardworking", "Artsy & unique", "Athletic & competitive"]
+            },
+            {
+                question: "Pick a hobby:",
+                answers: ["Reading & writing", "Cooking & jokes", "Making music", "Dancing", "Working out", "Painting & fashion", "Gaming & sports"]
+            },
+            {
+                question: "Your friends describe you as:",
+                answers: ["The wise one", "The funny one", "The cool one", "The energetic one", "The caring one", "The mysterious one", "The talented one"]
+            },
+            {
+                question: "Pick a color:",
+                answers: ["Navy blue", "Pink", "Black", "Green", "Orange", "Brown", "White"]
+            },
+            {
+                question: "Your ideal day:",
+                answers: ["Reading at a museum", "Cooking for friends", "Studio session", "Dance practice", "Gym workout", "Art gallery", "Trying everything!"]
+            }
+        ];
+
+        const members = ["RM", "Jin", "Suga", "J-Hope", "Jimin", "V", "Jungkook"];
+        const descriptions = {
+            "RM": "You are thoughtful, intellectual, and a natural leader!",
+            "Jin": "You are charming, funny, and worldwide handsome!",
+            "Suga": "You are cool, talented, and deeply passionate about your craft!",
+            "J-Hope": "You are energetic, positive, and the sunshine of any room!",
+            "Jimin": "You are hardworking, caring, and incredibly talented!",
+            "V": "You are unique, artistic, and one of a kind!",
+            "Jungkook": "You are the golden maknae — talented at everything you do!"
+        };
+
+        let currentQuestion = 0;
+        let scores = [0, 0, 0, 0, 0, 0, 0];
+
+        function loadQuestion() {
+            const container = document.getElementById('quiz-container');
+            if (currentQuestion >= questions.length) {
+                showResult();
+                return;
+            }
+            const q = questions[currentQuestion];
+            container.innerHTML = `
+                <h3>Question ${currentQuestion + 1} of ${questions.length}</h3>
+                <p>${q.question}</p>
+                ${q.answers.map((a, i) => `<button onclick="answer(${i})">${a}</button>`).join('')}
+            `;
+        }
+
+        function answer(index) {
+            scores[index]++;
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+            const maxScore = Math.max(...scores);
+            const memberIndex = scores.indexOf(maxScore);
+            const member = members[memberIndex];
+            document.getElementById('member-result').textContent = member;
+            document.getElementById('member-desc').textContent = descriptions[member];
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            scores = [0, 0, 0, 0, 0, 0, 0];
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
